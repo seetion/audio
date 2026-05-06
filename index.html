@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>希田智慧导航页</title>
+    <title>希田智慧-起始页</title>
     <style>
         * {
             margin: 0;
@@ -23,7 +23,7 @@
             overflow-x: hidden;
             transition: background 0.4s ease;
             /* 整体上移20px */
-            transform: translateY(-20px);
+            transform: translateY(-30px);
         }
 
         #particles-canvas {
@@ -248,9 +248,9 @@
 
         .status-bar {
             position: fixed;
-            bottom: 16px;
-            left: 16px;
-            font-size: 14px;
+            bottom: 1px;
+            left: 26px;
+            font-size: 13px;
             color: #333;
             display: flex;
             gap: 15px;
@@ -284,12 +284,30 @@
 
         .copyright {
             position: fixed;
-            bottom: 16px;
-            right: 16px;
+            bottom: 1px;
+            right: 39px;
             font-size: 13px;
             color: #444;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* logo和文字之间的间距，可改 */
         }
 
+        .logo-placeholder {
+              /* 高度和两行文字的总高度完全匹配 */
+              height: calc(13px * 2 * 1.5);
+              aspect-ratio: 1/1; /* 正方形logo，可改比例 */
+              /* 稳定可访问的网络占位图，预览就能看到 */
+              background: url("https://img.seetion.cn/images/qishiyelogo.png") center / contain no-repeat;
+              border-radius: 4px; /* 可选：圆角效果 */
+              /* 防止加载失败时显示背景色 */
+              background-color: #f0f0f0;
+        }
+
+        .text-group {
+              line-height: 1.5; /* 控制两行文字的行间距 */
+              text-align: left;
+       }
         .wallpaper-btn {
             cursor: pointer;
             color: #0066cc;
@@ -384,11 +402,11 @@
         <h4 style="margin-bottom:10px;text-align:center">渐变背景设置</h4>
         <div class="color-row">
             <span>起始颜色</span>
-            <input type="color" id="color1" value="#e0eafc">
+            <input type="color" id="color1" value="#00f5d4">
         </div>
         <div class="color-row">
             <span>结束颜色</span>
-            <input type="color" id="color2" value="#cfdef3">
+            <input type="color" id="color2" value="#7b2cbf">
         </div>
         <div class="angle-box">
             <span>渐变角度：<span id="angleNum">135</span>°</span>
@@ -421,11 +439,18 @@
         </div>
     </div>
 
-    <div class="copyright">贵州希田智慧农业科技有限公司</div>
+    <div class="copyright">
+  <!-- logo占位符 -->
+  <div class="logo-placeholder"></div>
+  <div class="text-group">
+    贵州希田智慧农业科技有限公司<br>
+    Guizhou Seetion Smart Agriculture Technology Co., Ltd.
+  </div>
+</div>
 
     <script>
         // 修改存储键名
-        const STORAGE_KEY = 'doubaodaohangV1.0';
+        const STORAGE_KEY = 'doubaodaohangV2.0';
         const DEFAULT_LINKS = [
             { text: 'DeepSeek', url: 'https://www.deepseek.com' },
             { text: '豆包', url: 'https://www.doubao.com' },
